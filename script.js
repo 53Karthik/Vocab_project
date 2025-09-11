@@ -1,6 +1,6 @@
 const data = [
   {
-    date: "11/09/2025",
+    date: "10/09/2025",
     cards: [
       { word: "Accomplish", phonetic: "[əˈkʌmplɪʃ]", meaning: "To succeed in doing something.", sentence: "She was able to accomplish her goals on time." },
       { word: "Benevolent", phonetic: "[bəˈnɛvələnt]", meaning: "Well meaning and kindly.", sentence: "The benevolent leader helped many people." },
@@ -15,7 +15,7 @@ const data = [
     ]
   },
   {
-    date: "12/09/2025",
+    date: "11/09/2025",
     cards: [
       { word: "Keen", phonetic: "[kiːn]", meaning: "Having a sharp edge or point; eager.", sentence: "I have a keen interest in psychology." },
       { word: "Luminous", phonetic: "[ˈluːmɪnəs]", meaning: "Emitting light; bright.", sentence: "The luminous stars lit up the night sky." },
@@ -155,3 +155,4 @@ document.getElementById('user-form').addEventListener('submit', (e) => {
   updateCatalog();
   updateCard();
 });
+
