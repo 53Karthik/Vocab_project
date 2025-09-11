@@ -1,0 +1,135 @@
+body {
+  background: #f7fcff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: #45956e;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px 0 rgba(44, 140, 104, .28);
+  padding: 32px 28px 28px 28px;
+  max-width: 720px;
+  width: 98%;
+  text-align: left;
+}
+form {
+  margin-bottom: 16px;
+}
+.catalog {
+  float: left;
+  width: 32%;
+  background: #f2f2f2;
+  border-radius: 8px;
+  padding: 14px;
+  color: #294c3c;
+  min-height: 250px;
+  box-shadow: 0 2px 8px 0 rgba(44, 140, 104, .10);
+}
+.catalog ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.catalog li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  cursor: pointer;
+}
+.catalog li.active {
+  background: #cde1d4;
+  border-radius: 6px;
+  color: #273c2c;
+}
+.catalog .progress {
+  margin-left: 8px;
+  font-size: 1em;
+  color: #476052;
+}
+.catalog .done {
+  color: #39b94c;
+  margin-left: 4px;
+  font-weight: bold;
+}
+.flashcard {
+  background: #ffffff;
+  border-radius: 12px;
+  margin-left: 34%;
+  margin-top: 0;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px 0 rgba(44, 140, 104, .10);
+  padding: 20px 18px;
+  position: relative;
+  min-height: 200px;
+}
+#date-label {
+  color: #627669;
+  margin: 6px 0 8px 0;
+  font-size: 1.08em;
+}
+.word-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.word {
+  font-size: 1.55em;
+  font-weight: bold;
+  color: #273c2c;
+  margin-bottom: 12px;
+  letter-spacing: 0.6px;
+}
+.phonetic {
+  font-size: 1.05em;
+  color: #18644b;
+  font-style: italic;
+  margin-left: 4px;
+  margin-bottom: 7px;
+  font-weight: 700;
+}
+.meaning {
+  color: #43515b;
+  font-size: 1.07em;
+  margin-bottom: 11px;
+}
+.sentence {
+  color: #578ca1;
+  font-style: italic;
+  font-size: 1em;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+button {
+  background: #294c3c;
+  border: none;
+  color: #e1f7e7;
+  padding: 9px 18px;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 550;
+  transition: background 0.2s;
+}
+button:hover {
+  background: #153a28;
+}
+#catalog-text {
+  color: #476052;
+  font-size: 1em;
+}
+input[type="text"] {
+  border: 1px solid #91c8b1;
+  border-radius: 7px;
+  padding: 7px 13px;
+  margin-right: 10px;
+  font-size: 1em;
+}
