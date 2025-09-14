@@ -81,19 +81,17 @@ let progress = {};
 let currentDateIdx = 0;
 let currentCardIdx = 0;
 
-// Ensure no duplicates in progress arrays before saving
 function saveProgress() {
   for (const date in progress) {
     if (Array.isArray(progress[date])) {
       progress[date] = [...new Set(progress[date])];
     }
   }
-  localStorage.setItem('vocab_progress_' + username, JSON.stringify(progress));
+  localStorage.setItem("vocab_progress_" + username, JSON.stringify(progress));
 }
 
-// Load and sanitize progress from localStorage
 function loadProgress() {
-  const raw = localStorage.getItem('vocab_progress_' + username);
+  const raw = localStorage.getItem("vocab_progress_" + username);
   if (raw) {
     progress = JSON.parse(raw);
     for (const date in progress) {
@@ -101,33 +99,33 @@ function loadProgress() {
         progress[date] = [...new Set(progress[date])];
       }
     }
+    saveProgress();
   } else {
     progress = {};
   }
 }
 
-// Update the catalog panel with dates and progress
 function updateCatalog() {
-  const catalog = document.getElementById('catalog');
-  const list = document.getElementById('date-list');
-  list.innerHTML = '';
+  const list = document.getElementById("date-list");
+  list.innerHTML = "";
   data.forEach((day, idx) => {
-    const li = document.createElement('li');
+    const li = document.createElement("li");
     li.textContent = day.date;
-    li.className = idx === currentDateIdx ? 'active' : '';
+    li.className = idx === currentDateIdx ? "active" : "";
     const reviewed = progress[day.date] || [];
     const uniqueReviewed = [...new Set(reviewed)];
-    const progressSpan = document.createElement('span');
-    progressSpan.className = 'progress';
-    progressSpan.textContent = `${uniqueReviewed.length}/${day.cards.length}`;
-    if (uniqueReviewed.length === day.cards.length) {
-      const tick = document.createElement('span');
-      tick.className = 'done';
-      tick.textContent = '✓';
-      progressSpan.appendChild(tick);
+    const total = day.cards.length;
+    const progSpan = document.createElement("span");
+    progSpan.className = "progress";
+    progSpan.textContent = `${uniqueReviewed.length}/${total}`;
+    if (uniqueReviewed.length === total && total > 0) {
+      const tick = document.createElement("span");
+      tick.className = "done";
+      tick.textContent = "✓";
+      progSpan.appendChild(tick);
     }
-    li.appendChild(progressSpan);
-    li.addEventListener('click', () => {
+    li.appendChild(progSpan);
+    li.addEventListener("click", () => {
       currentDateIdx = idx;
       currentCardIdx = 0;
       updateCatalog();
@@ -137,7 +135,6 @@ function updateCatalog() {
   });
 }
 
-// Mark current card as reviewed (if not already)
 function markReviewed() {
   const day = data[currentDateIdx];
   const word = day.cards[currentCardIdx].word;
@@ -145,60 +142,53 @@ function markReviewed() {
   if (!progress[day.date].includes(word)) {
     progress[day.date].push(word);
     saveProgress();
+    updateCatalog();
   }
-  updateCatalog();
 }
 
-// Helper to render multi-line strings with proper <br>
 function renderMultiline(text) {
-  if (!text) return '';
-  return text.replace(/\n/g, '<br>');
+  if (!text) return "";
+  return text.replace(/\n/g, "<br>");
 }
 
-// Show the current flashcard's data on screen
 function updateCard() {
   const day = data[currentDateIdx];
   const card = day.cards[currentCardIdx];
+  document.getElementById("word").textContent = card.word;
+  document.getElementById("phonetic").textContent = card.phonetic || "";
+  document.getElementById("meaning").innerHTML = renderMultiline(card.meaning);
+  document.getElementById("sentence").innerHTML = renderMultiline(card.sentence);
+  document.getElementById("date-label").textContent = day.date;
+  document.getElementById("catalog-text").textContent = `${currentCardIdx + 1}/${day.cards.length}`;
+  document.getElementById("prev-btn").disabled = currentCardIdx === 0;
+  document.getElementById("next-btn").disabled = currentCardIdx === day.cards.length - 1;
 
-  document.getElementById('word').textContent = card.word;
-  document.getElementById('phonetic').textContent = card.phonetic || '';
-  document.getElementById('meaning').innerHTML = renderMultiline(card.meaning);
-  document.getElementById('sentence').innerHTML = renderMultiline(card.sentence);
-
-  document.getElementById('date-label').textContent = day.date;
-  document.getElementById('catalog-text').textContent = `${currentCardIdx + 1}/${day.cards.length}`;
-
-  document.getElementById('prev-btn').disabled = currentCardIdx === 0;
-  document.getElementById('next-btn').disabled = currentCardIdx === day.cards.length - 1;
-
+  // Automatically mark as reviewed whenever the card is shown
   markReviewed();
 }
 
-document.getElementById('prev-btn').addEventListener('click', () => {
+document.getElementById("prev-btn").addEventListener("click", () => {
   if (currentCardIdx > 0) {
     currentCardIdx--;
     updateCard();
   }
 });
 
-document.getElementById('next-btn').addEventListener('click', () => {
-  const day = data[currentDateIdx];
-  if (currentCardIdx < day.cards.length - 1) {
+document.getElementById("next-btn").addEventListener("click", () => {
+  if (currentCardIdx < data[currentDateIdx].cards.length - 1) {
     currentCardIdx++;
     updateCard();
   }
 });
 
-document.getElementById('user-form').addEventListener('submit', (e) => {
+document.getElementById("user-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const input = document.getElementById('username').value.trim();
+  const input = document.getElementById("username").value.trim();
   if (!input) return;
   username = input;
-  document.getElementById('user-form').style.display = 'none';
-  document.getElementById('main-content').style.display = 'block';
+  document.getElementById("user-form").style.display = "none";
+  document.getElementById("main-content").style.display = "block";
   loadProgress();
   updateCatalog();
   updateCard();
 });
-
-
