@@ -28,7 +28,52 @@ const data = [
       { word: "Scrutinize", phonetic: "[ˈskruːtəˌnaɪz]", meaning: "To examine closely.", sentence: "The detective scrutinized the evidence." },
       { word: "Serene", phonetic: "[səˈriːn]", meaning: "Calm, peaceful, and tranquil.\nAn expanse of clear sky or calm sea.", sentence: "Her eyes were closed and she looked very serene.\nNot a cloud obscured the deep serene." }
     ]
-  }
+  },
+  {
+  "date": "12/09/2025",
+  "cards": [
+    { "word": "Ample", "phonetic": "[ˈæmpəl]", "meaning": "Plenty; more than enough.", "sentence": "There is ample evidence to support the claim." },
+    { "word": "Brief", "phonetic": "[briːf]", "meaning": "Short and concise.", "sentence": "He gave a brief explanation of the idea." },
+    { "word": "Clarity", "phonetic": "[ˈklærəti]", "meaning": "Clearness of thought or expression.", "sentence": "The teacher explained the topic with clarity." },
+    { "word": "Devote", "phonetic": "[dɪˈvoʊt]", "meaning": "To give time or effort to something.", "sentence": "She devoted her life to science." },
+    { "word": "Expand", "phonetic": "[ɪkˈspænd]", "meaning": "To make larger or more extensive.", "sentence": "The company plans to expand its services abroad." },
+    { "word": "Foster", "phonetic": "[ˈfɒstər]", "meaning": "To encourage or promote.", "sentence": "Teachers foster creativity in children." },
+    { "word": "Genuine", "phonetic": "[ˈdʒɛnjʊɪn]", "meaning": "Real, authentic, sincere.", "sentence": "He expressed genuine concern for his friend." },
+    { "word": "Harsh", "phonetic": "[hɑːrʃ]", "meaning": "Severe or unpleasant.", "sentence": "The critics gave the movie a harsh review." },
+    { "word": "Inevitable", "phonetic": "[ɪnˈɛvɪtəbl]", "meaning": "Certain to happen.", "sentence": "Failure is inevitable if you do not prepare." },
+    { "word": "Justify", "phonetic": "[ˈdʒʌstɪfaɪ]", "meaning": "To give reasons to support something.", "sentence": "He tried to justify his decision." }
+  ]
+},
+{
+  "date": "13/09/2025",
+  "cards": [
+    { "word": "Kindle", "phonetic": "[ˈkɪndl]", "meaning": "To start or stir up (emotion, interest).", "sentence": "The teacher’s words kindled her curiosity." },
+    { "word": "Logical", "phonetic": "[ˈlɒdʒɪkl]", "meaning": "Reasonable and based on clear thinking.", "sentence": "His argument was logical and well-structured." },
+    { "word": "Moderate", "phonetic": "[ˈmɒdəreɪt]", "meaning": "Not extreme; balanced.", "sentence": "He takes a moderate approach to exercise." },
+    { "word": "Neglect", "phonetic": "[nɪˈɡlɛkt]", "meaning": "To fail to care for properly.", "sentence": "Don’t neglect your health while working hard." },
+    { "word": "Outlook", "phonetic": "[ˈaʊtlʊk]", "meaning": "A view or perspective.", "sentence": "Traveling changes one’s outlook on life." },
+    { "word": "Precise", "phonetic": "[prɪˈsaɪs]", "meaning": "Exact and accurate.", "sentence": "You need precise instructions to complete the task." },
+    { "word": "Reinforce", "phonetic": "[ˌriːɪnˈfɔːrs]", "meaning": "To make stronger.", "sentence": "Practice will reinforce what you have learned." },
+    { "word": "Subtle", "phonetic": "[ˈsʌtl]", "meaning": "Delicate, not obvious.", "sentence": "She made a subtle change in her hairstyle." },
+    { "word": "Thrive", "phonetic": "[θraɪv]", "meaning": "To grow, develop or succeed well.", "sentence": "Children thrive in a supportive environment." },
+    { "word": "Unique", "phonetic": "[juːˈniːk]", "meaning": "One of a kind; special.", "sentence": "Her design has a unique style." }
+  ]
+},
+{
+  "date": "14/09/2025",
+  "cards": [
+    { "word": "Valuable", "phonetic": "[ˈvæljʊəbl]", "meaning": "Worth a lot; useful.", "sentence": "Your advice is very valuable to me." },
+    { "word": "Widespread", "phonetic": "[ˈwaɪdˌsprɛd]", "meaning": "Common or general across many areas.", "sentence": "The disease caused widespread concern." },
+    { "word": "Yield", "phonetic": "[jiːld]", "meaning": "To produce or provide.", "sentence": "The farm yields enough crops each year." },
+    { "word": "Adapt", "phonetic": "[əˈdæpt]", "meaning": "To adjust to new conditions.", "sentence": "We must adapt to climate change." },
+    { "word": "Balance", "phonetic": "[ˈbæləns]", "meaning": "A state of stability or fairness.", "sentence": "You need balance between work and rest." },
+    { "word": "Contrast", "phonetic": "[ˈkɒntrɑːst]", "meaning": "A difference between two things.", "sentence": "There is a sharp contrast between rich and poor." },
+    { "word": "Determine", "phonetic": "[dɪˈtɜːrmɪn]", "meaning": "To decide or establish firmly.", "sentence": "She determined to finish the project successfully." },
+    { "word": "Enhance", "phonetic": "[ɪnˈhæns]", "meaning": "To improve or increase.", "sentence": "Technology enhances modern communication." },
+    { "word": "Feasible", "phonetic": "[ˈfiːzəbl]", "meaning": "Possible and practical.", "sentence": "That plan is not feasible within this budget." },
+    { "word": "Grasp", "phonetic": "[ɡræsp]", "meaning": "To understand fully.", "sentence": "He quickly grasped the main idea." }
+  ]
+}
 ];
 
 let username = "";
@@ -155,4 +200,5 @@ document.getElementById('user-form').addEventListener('submit', (e) => {
   updateCatalog();
   updateCard();
 });
+
 
