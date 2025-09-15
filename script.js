@@ -73,7 +73,22 @@ const data = [
     { "word": "Feasible", "phonetic": "[ˈfiːzəbl]", "meaning": "Possible and practical.", "sentence": "That plan is not feasible within this budget." },
     { "word": "Grasp", "phonetic": "[ɡræsp]", "meaning": "To understand fully.", "sentence": "He quickly grasped the main idea." }
   ]
-}
+},
+  {
+    date: "15/09/2025",
+    cards:[
+  { word: "Ambiguous", phonetic: "[æmˈbɪɡjuəs]", meaning: "Open to more than one interpretation; not having one obvious meaning.", sentence: "His ambiguous reply left everyone confused." },
+  { word: "Candid", phonetic: "[ˈkændɪd]", meaning: "Truthful and straightforward; frank.", sentence: "She gave a candid account of her experiences." },
+  { word: "Defer", phonetic: "[dɪˈfɜːr]", meaning: "To delay or postpone.", sentence: "They decided to defer the meeting until next week." },
+  { word: "Hypothetical", phonetic: "[ˌhaɪpəˈθɛtɪkəl]", meaning: "Based on or serving as a hypothesis.", sentence: "Let's consider a hypothetical situation." },
+  { word: "Mature", phonetic: "[məˈtjʊər]", meaning: "Fully developed physically or emotionally.", sentence: "She's more mature than her classmates." },
+  { word: "Optimistic", phonetic: "[ˌɒptɪˈmɪstɪk]", meaning: "Hopeful and confident about the future.", sentence: "She is optimistic about her exam results." },
+  { word: "Practical", phonetic: "[ˈpræktɪkəl]", meaning: "Useful and sensible.", sentence: "She gave some practical advice for studying." },
+  { word: "Significant", phonetic: "[sɪɡˈnɪfɪkənt]", meaning: "Important or noticeable.", sentence: "There was a significant improvement in her English skills." },
+  { word: "Sufficient", phonetic: "[səˈfɪʃənt]", meaning: "Enough for a particular purpose.", sentence: "They had sufficient evidence to support the claim." },
+  { word: "Variety", phonetic: "[vəˈraɪəti]", meaning: "A number of different types of something.", sentence: "The course offers a variety of learning methods." }
+]
+  }
 ];
 
 let username = "";
@@ -192,3 +207,4 @@ document.getElementById("user-form").addEventListener("submit", (e) => {
   updateCatalog();
   updateCard();
 });
+
